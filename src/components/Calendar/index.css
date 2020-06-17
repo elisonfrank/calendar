@@ -1,0 +1,183 @@
+.table {
+  width: 65vw;
+  padding: 0;
+  border-spacing: 12px;
+}
+
+.table .thead {
+  display: block;
+  border-radius: 5px 5px 0 0;
+  width: auto;
+  padding: 0;
+  background: #fff;
+}
+
+.table .tbody {
+  /* border: 5px solid #b3b3b3; */
+  border-top: 2px solid #862d59;
+  border-radius: 0 0 5px 5px;
+}
+
+.table .th {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8), -1px 0 2px rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  background-color: #cc6699;
+  width: 9vw;
+  display: table-cell;
+  color: #333333;
+}
+
+.table .tr {
+  display: table-row;
+  margin-bottom: 5px !important;
+}
+
+.table .td {
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  background: #fff;
+  text-align: center;
+  height: 5vw;
+  width: 9.3vw;
+  position: relative;
+  display: table-cell;
+}
+
+.table .td span {
+  display: flex !important;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.table .td:not(.blocked)::before,
+.table .td:not(.blocked)::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  width: 45%;
+  height: 80%;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.9);
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.table .td::before {
+  left: 5px;
+  transform: skew(-5deg) rotate(-5deg);
+}
+
+.table .td::after {
+  right: 5px;
+  transform: skew(5deg) rotate(5deg);
+}
+
+.table .td:hover::before,
+.table .td:hover::after {
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.4);
+}
+
+.table .td:hover::before {
+  left: 4px;
+}
+
+.table .td:hover::after {
+  right: 4px;
+}
+
+.thead-week {
+  display: inline-flex;
+  padding: 0px;
+  max-width: 65vw;
+}
+
+.thead-month {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cc6699 !important;
+  min-height: 3.5vw;
+  border-top: 1px solid #862d59;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 -10px 10px inset rgba(134, 45, 89, 0.8),
+    0 -3px 5px inset rgba(134, 45, 89, 0.8);
+}
+
+.thead-month .back {
+  float: left;
+  background-color: unset;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.thead-month .next {
+  float: right;
+  background-color: unset;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.thead-month button {
+  border: 0;
+}
+
+.thead-month button:focus {
+  outline: unset;
+}
+
+.thead-month button svg {
+  background-color: unset;
+  cursor: pointer;
+}
+
+.thead-month button svg:hover {
+  opacity: 0.7;
+}
+
+.react-calendar__tile--active {
+  background: #cc6699 !important;
+}
+
+.react-calendar__tile--active abbr,
+.react-calendar__tile--now abbr,
+.react-calendar__tile:enabled:hover abbr {
+  background-color: unset;
+}
+
+.react-date-picker__wrapper {
+  background: #fff;
+}
+
+.number {
+  font-size: large;
+  background-color: unset;
+  color: #333333;
+}
+
+.today {
+  background-color: #cc6699 !important;
+}
+
+.blocked {
+  background: #cccccc !important;
+  box-shadow: 0 -5px 20px inset rgba(0, 0, 0, 0.3);
+}
+
+.blocked span {
+  opacity: 0.7;
+  color: #cccccc;
+  text-shadow: 0 1px 1px rgba(38, 38, 38, 0.6),
+    -1px 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.not-found {
+  text-align: center;
+  color: tomato;
+  padding: 10px;
+}

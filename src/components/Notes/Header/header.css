@@ -1,0 +1,33 @@
+.header-note {
+  border: 5px solid #cc6699;
+  border-radius: 5px 5px 0 0;
+  background-color: #cc6699;
+  padding-left: 10px;
+}
+
+.title-note {
+  font-weight: bold;
+  font-size: 15px;
+  background-color: unset;
+}
+
+.btn-expand {
+  margin-left: 70%;
+  cursor: pointer;
+  border: 0;
+  outline: unset;
+  border-radius: 50%;
+  background-color: #cc6699;
+  width: 20px;
+  height: 25px;
+}
+
+.btn-expand:hover {
+  opacity: 0.7;
+}
+
+.btn-expand svg {
+  border-color: unset;
+  outline: unset;
+  background-color: #cc6699;
+}

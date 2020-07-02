@@ -58,12 +58,12 @@ class Main extends Component {
 
   render() {
     return (
-      // <div className={this.state.isEditerEnabled ? "main blur" : "main"}>
-      <div className="main">
+      <div className="container">
         <Calendar
           searchDate={this.state.searchDate}
           data={this.state.data}
           load={this.loadCalendar}
+          onClickNew={this.handleClickNewNote}
         ></Calendar>
         <Notes
           searchDate={this.state.searchDate}

@@ -2,7 +2,10 @@
   border: 5px solid #cc6699;
   border-radius: 5px 5px 0 0;
   background-color: #cc6699;
-  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10px 0 10px;
 }
 
 .title-note {
@@ -12,7 +15,6 @@
 }
 
 .btn-expand {
-  margin-left: 70%;
   cursor: pointer;
   border: 0;
   outline: unset;

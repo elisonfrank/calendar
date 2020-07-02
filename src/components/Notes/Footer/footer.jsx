@@ -9,7 +9,7 @@ import {
 
 const Footer = (props) => (
   <div className="footer-note">
-    {!props.isCheckboxDeleteEnabled && (
+    {/* {!props.isCheckboxDeleteEnabled && (
       <button onClick={props.onClickNew}>
         <FontAwesomeIcon icon={faPlusCircle} />
       </button>
@@ -23,7 +23,7 @@ const Footer = (props) => (
       <button onClick={props.onClickDelete}>
         <FontAwesomeIcon icon={faMinusCircle} />
       </button>
-    )}
+    )} */}
   </div>
 );
 

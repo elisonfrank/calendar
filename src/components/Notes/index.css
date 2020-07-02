@@ -4,15 +4,10 @@
 }
 
 .notes {
-  margin-top: 20px;
-  margin-left: 25px;
-  padding: 0;
-  display: inline-block !important;
+  grid-area: notes;
   border-radius: 5px;
-  height: fit-content;
-  width: 270px;
-  max-height: 30vw;
   background-color: #cc6699;
-  overflow: auto;
+  margin: 10px;
+  height: fit-content;
   box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, 0.288);
 }

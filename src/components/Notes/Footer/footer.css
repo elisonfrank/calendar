@@ -1,29 +1,6 @@
 .footer-note {
   border: 5px solid #e6e6e6;
   border-radius: 0 0 5px 5px;
-  width: -webkit-fill-available;
-  height: 20px;
-  text-align: center;
-  justify-content: left;
-  display: flex;
-  background-color: #e6e6e6;
-}
-
-.footer-note button {
-  border: 0;
-  cursor: pointer;
-  border-color: unset;
-  outline: unset;
-  background-color: #e6e6e6;
-  width: 30px;
-}
-
-.footer-note button:hover {
-  opacity: 0.7;
-}
-
-.footer-note button svg {
-  border-color: unset;
-  outline: unset;
+  height: 2px;
   background-color: #e6e6e6;
 }

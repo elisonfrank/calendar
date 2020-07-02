@@ -25,13 +25,13 @@ class Calendar extends Component {
 
     for (var i = 0; i <= this.cols; i++) {
       ths.push(
-        <div className="th" key={this.week[i]}>
+        <div className={"th" + this.week[i]} key={this.week[i]}>
           {this.week[i].substr(0, 3)}
         </div>
       );
     }
     return (
-      <div className="thead">
+      <React.Fragment>
         <div className="thead-month">
           <button onClick={this.handleBack} className="back">
             <FontAwesomeIcon icon={faArrowCircleLeft} />
@@ -49,7 +49,7 @@ class Calendar extends Component {
           </button>
         </div>
         <div className="thead-week">{ths}</div>
-      </div>
+      </React.Fragment>
     );
   };
 
@@ -58,7 +58,7 @@ class Calendar extends Component {
       <div
         key={date.toLocaleDateString("en-US")}
         id={date.toLocaleDateString("en-US")}
-        className="td today"
+        className="day today"
         onClick={this.handleClickDay}
       >
         <span className="number">{date.getDate()}</span>
@@ -71,7 +71,7 @@ class Calendar extends Component {
       <div
         key={date.toLocaleDateString("en-US")}
         id={date.toLocaleDateString("en-US")}
-        className="td blocked"
+        className="day blocked"
       >
         <span className="number">{date.getDate()}</span>
       </div>
@@ -81,7 +81,7 @@ class Calendar extends Component {
   renderNormal = (date) => {
     return (
       <div
-        className="td"
+        className="day"
         key={date.toLocaleDateString("en-US")}
         id={date.toLocaleDateString("en-US")}
         onClick={this.handleClickDay}
@@ -92,7 +92,6 @@ class Calendar extends Component {
   };
 
   renderTbody = () => {
-    const trs = [];
     let tds = [];
     let td;
     let position = 0;
@@ -115,17 +114,14 @@ class Calendar extends Component {
 
         tds.push(td);
       }
-      if (tds.length > 0)
-        trs.push(
-          <div className="tr" key={row}>
-            {tds}
-          </div>
-        );
-      tds = [];
     }
     return (
       <div className="tbody">
-        {trs.length === 0 ? <div class="not-found">No data found</div> : trs}
+        {tds.length === 0 ? (
+          <div className="not-found">No data found</div>
+        ) : (
+          tds
+        )}
       </div>
     );
   };
@@ -135,9 +131,7 @@ class Calendar extends Component {
   };
 
   handleClickDay = (e) => {
-    //tem que cuidar se o click nao foi no span
-    //alert(e.target.getAttribute("id"));
-    //console.log(e.target.getAttribute("id"));
+    this.props.onClickNew();
   };
 
   handleBack = () => {
@@ -157,10 +151,8 @@ class Calendar extends Component {
   render() {
     return (
       <div className="calendar">
-        <div className="table">
-          {this.renderThead()}
-          {this.renderTbody()}
-        </div>
+        {this.renderThead()}
+        {this.renderTbody()}
       </div>
     );
   }

@@ -1,6 +1,16 @@
-.calendar {
-  float: left !important;
-  justify-content: left;
-  box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, 0.288);
-  border-radius: 5px;
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 2px;
+  grid-template-areas: "calendar notes";
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    display: inline-block;
+  }
 }

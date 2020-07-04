@@ -1,0 +1,12 @@
+.modal-body {
+  grid-area: modalb;
+  background: #fff;
+  display: contents;
+}
+
+textarea {
+  resize: none;
+  outline: none;
+  overflow: auto;
+  padding: 5px;
+}

@@ -8,7 +8,9 @@ class Main extends Component {
   state = {
     searchDate: new Date(Date.now()),
     areNotesShowing: true,
-    isEditerEnabled: false,
+    modalNote: {
+      show: false,
+    },
     isCheckboxDeleteEnabled: false,
     couldDeleteNote: false,
     data: [],
@@ -29,8 +31,24 @@ class Main extends Component {
     this.setState({ searchDate: date, data: response.data });
   };
 
-  handleClickNewNote = () => {
-    this.setState({ isEditerEnabled: true });
+  handleClickDay = (date, note) => {
+    this.setState({
+      modalNote: {
+        show: true,
+        date,
+        note,
+      },
+    });
+    console.log(date);
+    console.log(note);
+  };
+
+  handleCloseModal = () => {
+    this.setState({
+      modalNote: {
+        show: false,
+      },
+    });
   };
 
   handleClickDeleteNote = () => {
@@ -39,14 +57,14 @@ class Main extends Component {
     });
   };
 
-  handleClickSaveNote = () => {
-    //faz coisa aqui
-    this.setState({ isEditerEnabled: false });
-  };
+  // handleClickSaveNote = () => {
+  //   //faz coisa aqui
+  //   this.setState({ isEditerEnabled: false });
+  // };
 
-  handleClickCancelNote = () => {
-    this.setState({ isEditerEnabled: false });
-  };
+  // handleClickCancelNote = () => {
+  //   this.setState({ isEditerEnabled: false });
+  // };
 
   handleClickShowNote = () => {
     this.setState({ areNotesShowing: !this.state.areNotesShowing });
@@ -63,7 +81,9 @@ class Main extends Component {
           searchDate={this.state.searchDate}
           data={this.state.data}
           load={this.loadCalendar}
-          onClickNew={this.handleClickNewNote}
+          onDayClick={this.handleClickDay}
+          modalNote={this.state.modalNote}
+          onCloseModal={this.handleCloseModal}
         ></Calendar>
         <Notes
           searchDate={this.state.searchDate}
@@ -76,11 +96,11 @@ class Main extends Component {
           onClickShowNotes={this.handleClickShowNote}
           setNoteCouldDelete={this.setNoteCouldDelete}
         ></Notes>
-        <Editer
+        {/* <Editer
           isEditerEnabled={this.state.isEditerEnabled}
           onClickSave={this.handleClickSaveNote}
           onClickCancel={this.handleClickCancelNote}
-        ></Editer>
+        ></Editer> */}
       </div>
     );
   }

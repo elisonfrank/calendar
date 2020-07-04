@@ -1,0 +1,44 @@
+.modal-footer {
+  grid-area: modalf;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 5px;
+  background-color: #e6e6e6;
+  border-radius: 0 0 5px 5px;
+}
+
+.modal-footer > button {
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: black;
+  border: 0;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.modal-footer > button:focus {
+  outline: none;
+}
+
+.modal-footer > button:hover {
+  color: #999;
+}
+
+.btn-modal-save {
+  background-color: #0047b3;
+}
+
+.btn-modal-cancel {
+  background-color: #ff3333;
+}
+
+.btn-modal-confirm {
+  background-color: #33cc33;
+}
+
+.btn-modal-ok {
+  background-color: #0047b3;
+}

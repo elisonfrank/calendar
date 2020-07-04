@@ -1,11 +1,11 @@
 import React from "react";
 import "./footer.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPlusCircle,
-  faCheckCircle,
-  faMinusCircle,
-} from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faPlusCircle,
+//   faCheckCircle,
+//   faMinusCircle,
+// } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = (props) => (
   <div className="footer-note">

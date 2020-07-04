@@ -9,3 +9,11 @@
 body {
   background: #dde1e7;
 }
+
+.svg-inline--fa.fa-w-16 {
+  width: 30px;
+}
+
+.svg-inline--fa {
+  height: 20px;
+}

@@ -1,0 +1,29 @@
+.modal-header {
+  grid-area: modalh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #cc6699;
+  border-radius: 5px 5px 0 0;
+}
+
+.modal-header > label {
+  font-weight: bold;
+}
+
+.btn-close-modal {
+  border: 0;
+  background-color: unset;
+  height: 20px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.btn-close-modal:focus {
+  outline: unset;
+}
+
+.btn-close-modal:hover svg path {
+  opacity: 0.7;
+}

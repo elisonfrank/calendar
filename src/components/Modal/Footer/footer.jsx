@@ -1,10 +1,14 @@
 import React from "react";
 import "./footer.css";
 
-const Footer = ({ toSave, toCancel, toConfirm, Ok, onCancel }) => {
+const Footer = ({ toSave, toCancel, toConfirm, Ok, onCancel, onSave }) => {
   return (
     <div className="modal-footer">
-      {toSave && <button className="btn-modal-save">Save</button>}
+      {toSave && (
+        <button className="btn-modal-save" onClick={onSave}>
+          Save
+        </button>
+      )}
       {toCancel && (
         <button className="btn-modal-cancel" onClick={onCancel}>
           Cancel

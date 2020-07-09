@@ -6,8 +6,8 @@ import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 const Header = (props) => (
   <div className="header-note">
     <span className="title-note">Notes</span>
-    <button className="btn-expand" onClick={props.onClickShowNotes}>
-      <FontAwesomeIcon icon={props.areNotesShowing ? faAngleUp : faAngleDown} />
+    <button className="btn-expand" onClick={props.onClickShow}>
+      <FontAwesomeIcon icon={props.showNotes ? faAngleUp : faAngleDown} />
     </button>
   </div>
 );

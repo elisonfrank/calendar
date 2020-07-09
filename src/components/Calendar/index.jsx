@@ -70,38 +70,32 @@ const renderThead = (searchDate, load) => {
   );
 };
 
-const renderTbody = (data, load, onDayClick) => {
+const renderTbody = (data, onDayClick) => {
   let tds = [];
   let td;
   let position = 0;
 
-  const renderToday = (date, note) => (
+  const renderToday = (id, date, note) => (
     <div
       key={date.toLocaleDateString("en-US")}
-      id={date.toLocaleDateString("en-US")}
       className="day today"
-      onClick={() => onDayClick(date, note)}
+      onClick={() => onDayClick(id, date, note)}
     >
       <span className="number">{date.getDate()}</span>
     </div>
   );
 
   const renderBlocked = (date) => (
-    <div
-      key={date.toLocaleDateString("en-US")}
-      id={date.toLocaleDateString("en-US")}
-      className="day blocked"
-    >
+    <div key={date.toLocaleDateString("en-US")} className="day blocked">
       <span className="number">{date.getDate()}</span>
     </div>
   );
 
-  const renderNormal = (date, note) => (
+  const renderNormal = (id, date, note) => (
     <div
       className="day"
       key={date.toLocaleDateString("en-US")}
-      id={date.toLocaleDateString("en-US")}
-      onClick={() => onDayClick(date, note)}
+      onClick={() => onDayClick(id, date, note)}
     >
       <span className="number">{date.getDate()}</span>
     </div>
@@ -119,8 +113,8 @@ const renderTbody = (data, load, onDayClick) => {
 
         if (!dateObj.info.enabled) td = renderBlocked(date);
         else if (date.toDateString() === new Date(Date.now()).toDateString())
-          td = renderToday(date, dateObj.info.note);
-        else td = renderNormal(date, dateObj.info.note);
+          td = renderToday(dateObj.info.noteid, date, dateObj.info.note);
+        else td = renderNormal(dateObj.info.noteid, date, dateObj.info.note);
       } else td = <td></td>;
 
       tds.push(td);
@@ -140,19 +134,26 @@ const Calendar = ({
   onDayClick,
   modalNote,
   onCloseModal,
+  onSaveModal,
+  onChangeValueTextArea,
 }) => {
   return (
     <div className="calendar">
       {renderThead(searchDate, load)}
-      {renderTbody(data, load, onDayClick)}
+      {renderTbody(data, onDayClick)}
       <Modal
         show={modalNote.show}
         title={new Date(modalNote.date).toLocaleDateString()}
         toSave={true}
         toCancel={true}
-        handleCloseModal={onCloseModal}
+        onClose={onCloseModal}
+        onSave={() => onSaveModal(modalNote.id, modalNote.date, modalNote.note)}
       >
-        <textarea placeholder="Write a note...">{modalNote.note}</textarea>
+        <textarea
+          placeholder="Write a note..."
+          defaultValue={modalNote.note}
+          onChange={onChangeValueTextArea}
+        ></textarea>
       </Modal>
     </div>
   );

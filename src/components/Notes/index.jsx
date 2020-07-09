@@ -10,18 +10,18 @@ class Notes extends Component {
       return (
         <div className="notes">
           <Header
-            onClickShowNotes={this.props.onClickShowNotes}
-            areNotesShowing={this.props.areNotesShowing}
+            onClickShow={this.props.onClickShow}
+            showNotes={this.props.showNotes}
           ></Header>
           <Body
             searchDate={this.props.searchDate}
             data={this.props.data}
-            areNotesShowing={this.props.areNotesShowing}
-            isCheckboxDeleteEnabled={this.props.isCheckboxDeleteEnabled}
+            showNotes={this.props.showNotes}
+            enableDeleteCheckbox={this.props.enableDeleteCheckbox}
             setNoteCouldDelete={this.props.setNoteCouldDelete}
           ></Body>
           <Footer
-            isCheckboxDeleteEnabled={this.props.isCheckboxDeleteEnabled}
+            enableDeleteCheckbox={this.props.enableDeleteCheckbox}
             couldDeleteNote={this.props.couldDeleteNote}
             onClickNew={this.props.onClickNew}
             onClickDelete={this.props.onClickDelete}

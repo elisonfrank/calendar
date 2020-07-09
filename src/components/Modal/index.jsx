@@ -11,7 +11,8 @@ const Modal = ({
   toCancel,
   toConfirm,
   Ok,
-  handleCloseModal,
+  onClose,
+  onSave,
   children,
 }) => {
   const showClassName = show ? "modal display-block" : "modal display-none";
@@ -19,14 +20,15 @@ const Modal = ({
   return (
     <div className={showClassName}>
       <section className="modal-main">
-        <Header title={title} closeModal={handleCloseModal}></Header>
+        <Header title={title} onClose={onClose}></Header>
         <Body>{children}</Body>
         <Footer
           toSave={toSave}
           toCancel={toCancel}
           toConfirm={toConfirm}
           Ok={Ok}
-          onCancel={handleCloseModal}
+          onCancel={onClose}
+          onSave={onSave}
         ></Footer>
       </section>
     </div>

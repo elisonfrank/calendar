@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 import Calendar from "../../components/Calendar/index";
 import Notes from "../../components/Notes/index";
-import Editer from "../../components/Notes/Editer/editer";
 import api from "../../services/api";
 
 class Main extends Component {
   state = {
     searchDate: new Date(Date.now()),
-    areNotesShowing: true,
+    showNotes: true,
     modalNote: {
       show: false,
+      id: "",
+      date: "",
+      note: "",
     },
-    isCheckboxDeleteEnabled: false,
+    enableDeleteCheckbox: false,
     couldDeleteNote: false,
     data: [],
   };
@@ -20,10 +22,6 @@ class Main extends Component {
     this.loadCalendar(this.state.searchDate);
   }
 
-  setProp = (key) => {
-    this.setState(key);
-  };
-
   loadCalendar = async (date) => {
     const month = date.getMonth();
     const year = date.getFullYear();
@@ -31,43 +29,65 @@ class Main extends Component {
     this.setState({ searchDate: date, data: response.data });
   };
 
-  handleClickDay = (date, note) => {
+  handleClickDay = (id, date, note) => {
     this.setState({
       modalNote: {
         show: true,
+        id,
         date,
         note,
       },
     });
-    console.log(date);
-    console.log(note);
   };
 
   handleCloseModal = () => {
     this.setState({
       modalNote: {
         show: false,
+        id: "",
+        date: "",
+        note: "",
       },
     });
   };
 
+  handleSaveModal = async (id, date, description) => {
+    let res;
+
+    if (!id) {
+      res = await api.post(`/calendar/`, { date, description });
+    } else {
+      res = await api.put(`/calendar/${id}`, { date, description });
+    }
+
+    if (res.data.error) {
+      console.log(res.data.error);
+      alert(res.data.error);
+    } else {
+      this.handleCloseModal();
+      this.loadCalendar(this.state.searchDate);
+    }
+  };
+
   handleClickDeleteNote = () => {
     this.setState({
-      isCheckboxDeleteEnabled: !this.state.isCheckboxDeleteEnabled,
+      enableDeleteCheckbox: !this.state.enableDeleteCheckbox,
     });
   };
 
-  // handleClickSaveNote = () => {
-  //   //faz coisa aqui
-  //   this.setState({ isEditerEnabled: false });
-  // };
-
-  // handleClickCancelNote = () => {
-  //   this.setState({ isEditerEnabled: false });
-  // };
-
   handleClickShowNote = () => {
-    this.setState({ areNotesShowing: !this.state.areNotesShowing });
+    this.setState({ showNotes: !this.state.showNotes });
+  };
+
+  handleChangeValueTextArea = (e) => {
+    this.setState({
+      modalNote: {
+        show: this.state.modalNote.show,
+        id: this.state.modalNote.id,
+        date: this.state.modalNote.date,
+        note: e.target.value,
+      },
+    });
   };
 
   setNoteCouldDelete = () => {
@@ -84,23 +104,20 @@ class Main extends Component {
           onDayClick={this.handleClickDay}
           modalNote={this.state.modalNote}
           onCloseModal={this.handleCloseModal}
+          onSaveModal={this.handleSaveModal}
+          onChangeValueTextArea={this.handleChangeValueTextArea}
         ></Calendar>
         <Notes
           searchDate={this.state.searchDate}
-          isCheckboxDeleteEnabled={this.state.isCheckboxDeleteEnabled}
-          areNotesShowing={this.state.areNotesShowing}
-          couldDeleteNote={this.state.couldDeleteNote}
           data={this.state.data}
+          enableDeleteCheckbox={this.state.enableDeleteCheckbox}
+          showNotes={this.state.showNotes}
           onClickNew={this.handleClickNewNote}
           onClickDelete={this.handleClickDeleteNote}
-          onClickShowNotes={this.handleClickShowNote}
+          onClickShow={this.handleClickShowNote}
+          couldDeleteNote={this.state.couldDeleteNote}
           setNoteCouldDelete={this.setNoteCouldDelete}
         ></Notes>
-        {/* <Editer
-          isEditerEnabled={this.state.isEditerEnabled}
-          onClickSave={this.handleClickSaveNote}
-          onClickCancel={this.handleClickCancelNote}
-        ></Editer> */}
       </div>
     );
   }

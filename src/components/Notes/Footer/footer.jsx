@@ -9,12 +9,12 @@ import "./footer.css";
 
 const Footer = (props) => (
   <div className="footer-note">
-    {/* {!props.isCheckboxDeleteEnabled && (
+    {/* {!props.enableDeleteCheckbox && (
       <button onClick={props.onClickNew}>
         <FontAwesomeIcon icon={faPlusCircle} />
       </button>
     )}
-    {props.isCheckboxDeleteEnabled && (
+    {props.enableDeleteCheckbox && (
       <button>
         <FontAwesomeIcon icon={faCheckCircle} />
       </button>

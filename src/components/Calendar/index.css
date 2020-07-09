@@ -161,10 +161,12 @@
 }
 
 .blocked span {
-  opacity: 0.7;
-  color: #cccccc;
-  text-shadow: 0 1px 1px rgba(38, 38, 38, 0.6),
-    -1px 0 1px rgba(255, 255, 255, 0.6);
+  background-color: #dde1e7;
+  color: transparent;
+  text-shadow: -2px -2px 1px rgba(180, 189, 202, 0.4);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
 }
 
 .not-found {

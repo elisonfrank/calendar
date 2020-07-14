@@ -1,0 +1,135 @@
+.tbody {
+  grid-area: cald;
+  display: contents;
+}
+
+.tbody .day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  margin: 5px;
+  position: relative;
+}
+
+.day span {
+  font-weight: lighter;
+}
+
+.day:not(.blocked)::before,
+.day:not(.blocked)::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  width: 40%;
+  height: 70%;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.day::before {
+  left: 5px;
+  transform: skew(-5deg) rotate(-5deg);
+}
+
+.day::after {
+  right: 5px;
+  transform: skew(5deg) rotate(5deg);
+}
+
+.day:hover::before,
+.day:hover::after {
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.4);
+}
+
+.day:hover::before {
+  left: 4px;
+}
+
+.day:hover::after {
+  right: 4px;
+}
+
+.number {
+  font-size: large;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background-color: unset;
+}
+
+.today {
+  background-color: #cc6699 !important;
+}
+
+.day:not(.blocked) {
+  cursor: pointer;
+}
+
+.blocked {
+  background: #dde1e7 !important;
+  box-shadow: 0 -5px 20px inset rgba(0, 0, 0, 0.1);
+}
+
+.blocked span {
+  background-color: #dde1e7;
+  color: transparent;
+  text-shadow: -2px -2px 1px rgba(180, 189, 202, 0.4);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+}
+
+.not-found {
+  text-align: center;
+  color: tomato;
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
+  .tbody .day {
+    margin: 0;
+  }
+
+  .day span {
+    font-size: 15px !important;
+  }
+
+  .blocked {
+    box-shadow: none;
+  }
+
+  .blocked span {
+    text-shadow: none;
+    color: #666;
+  }
+
+  .day:not(.blocked)::before,
+  .day:not(.blocked)::after {
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .tbody .day {
+    margin: 0;
+    border: 1px solid #cccccc;
+  }
+
+  .day span {
+    font-size: 15px !important;
+  }
+
+  .blocked {
+    box-shadow: none;
+  }
+
+  .blocked span {
+    text-shadow: none;
+    color: #666;
+  }
+
+  .day:not(.blocked)::before,
+  .day:not(.blocked)::after {
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,82 @@
+.thead-week {
+  grid-area: calw;
+  font-size: 80%;
+  font-style: italic;
+  text-transform: uppercase;
+  background-color: #cc6699;
+  color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.thead-month {
+  grid-area: calm;
+  background-color: #cc6699 !important;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 -10px 10px inset rgba(134, 45, 89, 0.8),
+    0 -3px 5px inset rgba(134, 45, 89, 0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.thead-month .back,
+.thead-month .next {
+  background-color: unset;
+  text-decoration: none;
+  width: 50px;
+  height: -webkit-fill-available;
+  cursor: pointer;
+}
+
+.thead-month .back {
+  border-radius: 5px 0 0 0;
+}
+
+.thead-month .next {
+  border-radius: 0 5px 0 0;
+}
+
+.thead-month .next:hover,
+.thead-month .back:hover {
+  background-color: #862d59;
+}
+
+.thead-month button {
+  border: 0;
+}
+
+.thead-month button:focus {
+  outline: unset;
+}
+
+.thead-month button:hover svg path {
+  color: #999;
+}
+
+.react-calendar__tile--active {
+  background: #cc6699 !important;
+}
+
+.react-calendar__tile--active abbr,
+.react-calendar__tile--now abbr,
+.react-calendar__tile:enabled:hover abbr {
+  background-color: unset;
+}
+
+.react-date-picker__wrapper {
+  background: #fff;
+}
+
+@media (max-width: 600px) {
+  .thead-month {
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .thead-month {
+    border-radius: 0;
+  }
+}

@@ -11,3 +11,17 @@
   height: fit-content;
   box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, 0.288);
 }
+
+@media (max-width: 600px) {
+  .notes {
+    margin: 10px 0 0 0;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .notes {
+    margin: 10px 0 0 0;
+    border-radius: 0;
+  }
+}

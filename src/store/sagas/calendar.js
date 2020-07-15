@@ -1,6 +1,6 @@
 import { takeLatest, put, call } from "redux-saga/effects";
-import api from "../services/api";
-import { Types } from "./ducks/calendar";
+import api from "../../services/api";
+import { Types } from "../ducks/calendar";
 
 function apiGet(date) {
   const month = date.getMonth();
@@ -22,5 +22,5 @@ export function* getCalendar(action) {
 }
 
 export default function* calendarSaga() {
-  yield [takeLatest(Types.REQUEST_LOAD_CALENDAR, getCalendar)];
+  yield takeLatest(Types.REQUEST_LOAD_CALENDAR, getCalendar);
 }

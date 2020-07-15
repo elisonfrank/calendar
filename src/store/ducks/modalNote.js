@@ -28,6 +28,7 @@ const setDescriptionNote = (state = INITIAL_STATE, action) => {
 };
 
 const requestSaveModal = (state = INITIAL_STATE, action) => {
+  console.log(action);
   return {
     ...state,
     id: action.id,

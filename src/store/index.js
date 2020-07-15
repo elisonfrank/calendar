@@ -4,7 +4,7 @@ import createSagaMiddleware from "redux-saga";
 import calendar from "./ducks/calendar";
 import modalNote from "./ducks/modalNote";
 import note from "./ducks/note";
-import rootSaga from "./sagas";
+import rootSaga from "./sagas/index";
 
 const sagaMiddleware = createSagaMiddleware();
 

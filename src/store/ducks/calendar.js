@@ -13,24 +13,33 @@ const INITIAL_STATE = {
   error: "",
 };
 
-const request = (state = INITIAL_STATE, action) => ({
-  ...state,
-  searchDate: action.date,
-  loading: true,
-});
+const request = (state = INITIAL_STATE, action) => {
+  console.log(action);
+  return {
+    ...state,
+    searchDate: action.date,
+    loading: true,
+  };
+};
 
-const success = (state = INITIAL_STATE, action) => ({
-  ...state,
-  data: action.data,
-  loading: false,
-  error: false,
-});
+const success = (state = INITIAL_STATE, action) => {
+  console.log(action);
+  return {
+    ...state,
+    data: action.data,
+    loading: false,
+    error: false,
+  };
+};
 
-const failure = (state = INITIAL_STATE, action) => ({
-  data: [],
-  loading: false,
-  error: action.error,
-});
+const failure = (state = INITIAL_STATE, action) => {
+  console.log(action);
+  return {
+    data: [],
+    loading: false,
+    error: action.error,
+  };
+};
 
 export default createReducer(INITIAL_STATE, {
   [Types.REQUEST_LOAD_CALENDAR]: request,

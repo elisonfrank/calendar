@@ -1,0 +1,348 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing App component should render correctly 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="calendar"
+  >
+    <div
+      className="thead-month"
+    >
+      <button
+        className="back"
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-arrow-circle-left fa-w-16 "
+          data-icon="arrow-circle-left"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zm28.9-143.6L209.4 288H392c13.3 0 24-10.7 24-24v-16c0-13.3-10.7-24-24-24H209.4l75.5-72.4c9.7-9.3 9.9-24.8.4-34.3l-11-10.9c-9.4-9.4-24.6-9.4-33.9 0L107.7 239c-9.4 9.4-9.4 24.6 0 33.9l132.7 132.7c9.4 9.4 24.6 9.4 33.9 0l11-10.9c9.5-9.5 9.3-25-.4-34.3z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </button>
+      <div
+        className="react-date-picker react-date-picker--closed react-date-picker--enabled month"
+        onFocus={[Function]}
+      >
+        <div
+          className="react-date-picker__wrapper"
+        >
+          <div
+            className="react-date-picker__inputGroup"
+            onClick={[Function]}
+          >
+            <input
+              max="5760-09"
+              min="1821-04"
+              name="date"
+              onChange={[Function]}
+              onFocus={[Function]}
+              style={
+                Object {
+                  "left": "-9999px",
+                  "position": "absolute",
+                  "top": "-9999px",
+                  "visibility": "hidden",
+                }
+              }
+              type="month"
+              value="2020-07"
+            />
+            
+            <input
+              autoComplete="off"
+              className="react-date-picker__inputGroup__input react-date-picker__inputGroup__month"
+              max={12}
+              min={1}
+              name="month"
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyPress={[Function]}
+              onKeyUp={[Function]}
+              placeholder="mm"
+              required={null}
+              type="number"
+              value={7}
+            />
+            <span
+              className="react-date-picker__inputGroup__divider"
+            >
+              /
+            </span>
+            <input
+              autoComplete="off"
+              autoFocus={false}
+              className="react-date-picker__inputGroup__input react-date-picker__inputGroup__year"
+              max={275760}
+              min={1}
+              name="year"
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyPress={[Function]}
+              onKeyUp={[Function]}
+              placeholder="yyyy"
+              required={null}
+              step={1}
+              type="number"
+              value={2020}
+            />
+            
+          </div>
+          <button
+            className="react-date-picker__clear-button react-date-picker__button"
+            onClick={[Function]}
+            onFocus={[Function]}
+            type="button"
+          >
+            <svg
+              className="react-date-picker__clear-button__icon react-date-picker__button__icon"
+              height={19}
+              stroke="black"
+              strokeWidth={2}
+              viewBox="0 0 19 19"
+              width={19}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="4"
+                x2="15"
+                y1="4"
+                y2="15"
+              />
+              <line
+                x1="15"
+                x2="4"
+                y1="4"
+                y2="15"
+              />
+            </svg>
+          </button>
+          <button
+            className="react-date-picker__calendar-button react-date-picker__button"
+            onClick={[Function]}
+            onFocus={[Function]}
+            type="button"
+          >
+            <svg
+              className="react-date-picker__calendar-button__icon react-date-picker__button__icon"
+              height={19}
+              stroke="black"
+              strokeWidth={2}
+              viewBox="0 0 19 19"
+              width={19}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                fill="none"
+                height="15"
+                width="15"
+                x="2"
+                y="2"
+              />
+              <line
+                x1="6"
+                x2="6"
+                y1="0"
+                y2="4"
+              />
+              <line
+                x1="13"
+                x2="13"
+                y1="0"
+                y2="4"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <button
+        className="next"
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-arrow-circle-right fa-w-16 "
+          data-icon="arrow-circle-right"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="thead-week"
+    >
+      <div
+        className="thsunday"
+      >
+        sun
+      </div>
+      <div
+        className="thmonday"
+      >
+        mon
+      </div>
+      <div
+        className="thtuesday"
+      >
+        tue
+      </div>
+      <div
+        className="thwednesday"
+      >
+        wed
+      </div>
+      <div
+        className="ththursday"
+      >
+        thu
+      </div>
+      <div
+        className="thfriday"
+      >
+        fri
+      </div>
+      <div
+        className="thsaturday"
+      >
+        sat
+      </div>
+    </div>
+    <div
+      className="tbody"
+    >
+      <div
+        className="not-found"
+      >
+        No data found
+      </div>
+    </div>
+    <div
+      className="modal display-none"
+    >
+      <section
+        className="modal-main"
+      >
+        <div
+          className="modal-header"
+        >
+          <label>
+            Invalid Date
+          </label>
+          <button
+            className="btn-close-modal"
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-window-close fa-w-16 "
+              data-icon="window-close"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              style={Object {}}
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"
+                fill="currentColor"
+                style={Object {}}
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="modal-body"
+        >
+          <textarea
+            defaultValue=""
+            onChange={[Function]}
+            placeholder="Write a note..."
+          />
+        </div>
+        <div
+          className="modal-footer"
+        >
+          <button
+            className="btn-modal-save"
+            onClick={[Function]}
+          >
+            Save
+          </button>
+          <button
+            className="btn-modal-cancel"
+            onClick={[Function]}
+          >
+            Cancel
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div
+    className="notes"
+  >
+    <div
+      className="header-note"
+    >
+      <span
+        className="title-note"
+      >
+        Notes
+      </span>
+      <button
+        className="btn-expand"
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-angle-up fa-w-10 "
+          data-icon="angle-up"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 320 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="body-note"
+    />
+    <div
+      className="footer-note"
+    />
+  </div>
+</div>
+`;

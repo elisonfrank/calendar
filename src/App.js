@@ -2,31 +2,18 @@ import React, { Component } from "react";
 import "./app.css";
 import Main from "./pages/main/index";
 
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-
-import { Creators as CalendarActions } from "./store/ducks/calendar";
+import { Provider } from "react-redux";
+import store from "./store";
 
 class App extends Component {
-  componentDidMount() {
-    const { requestLoadCalendar, searchDate } = this.props;
-    requestLoadCalendar(searchDate);
-  }
-
   render() {
     return (
       <div className="App">
-        <Main></Main>
+        <Provider store={store}>
+          <Main></Main>
+        </Provider>
       </div>
     );
   }
 }
-
-const mapStateToProps = (state) => ({
-  searchDate: state.calendar.searchDate,
-});
-
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(CalendarActions, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
